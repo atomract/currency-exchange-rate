@@ -35,10 +35,10 @@ function App() {
   }, [info])
     
   // Function to convert the currency
-  const convert = useCallback( () => {
+  const convert = () => {
     var rate = info[to];
     setOutput(input * rate);
-  },[])
+  }
   
   // Function to switch between two currency
   function flip() {
