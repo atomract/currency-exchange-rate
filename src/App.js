@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Axios from 'axios';
 import Dropdown from 'react-dropdown';
 import { HiSwitchHorizontal } from 'react-icons/hi';
@@ -35,10 +35,10 @@ function App() {
   }, [info])
     
   // Function to convert the currency
-  function convert() {
+  const convert = useCallback( () => {
     var rate = info[to];
     setOutput(input * rate);
-  }
+  },[])
   
   // Function to switch between two currency
   function flip() {
